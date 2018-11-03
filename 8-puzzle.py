@@ -254,7 +254,8 @@ def display():
 # solve 8-puzzle using specific algorithm
 def solve():
     for b in button:
-        b['state'] = 'disabled'
+        b.configure(state='disabled')
+    option.configure(state='disabled')
 
     run = {1: puzzle.solve_by_BFS,
         2: puzzle.solve_by_IDS,
@@ -281,7 +282,8 @@ def solve():
         for i in range(9):
             label[i].config(bg='red' if puzzle.state[i] != '0' else 'white')
         for b in button:
-            b['state'] = 'normal'
+            b.configure(state='normal')
+        option.configure(state='normal')
         return
 
     info = 'Algorithm: '+_algo[index]+'\n' \
@@ -295,7 +297,8 @@ def solve():
 def display_procedure(path):
     if not path:
         for b in button:
-            b['state'] = 'normal'
+            b.configure(state='normal')
+        option.configure(state='normal')
         return
     puzzle.state = path.pop(0)
     display()
@@ -349,11 +352,11 @@ for i in range(3):
 buttonFrame = Frame(win, relief=RAISED, borderwidth=1)
 buttonFrame.pack(fill=X, expand=True)
 button = []
-button.append(Button(buttonFrame, width='6', relief=RAISED, text="Reset", command=reset))
-button.append(Button(buttonFrame, width='6', relief=RAISED, text="Shuffle", command=shuffle))
-button.append(Button(buttonFrame, width='6', relief=RAISED, text="Solve", command=solve)) # to be initialized
+button.append(Button(buttonFrame, width='8', relief=RAISED, text="Reset", command=reset))
+button.append(Button(buttonFrame, width='8', relief=RAISED, text="Shuffle", command=shuffle))
+button.append(Button(buttonFrame, width='8', relief=RAISED, text="Solve", command=solve)) # to be initialized
 for b in button:
-    b.pack(side=LEFT, padx=2, pady=7)
+    b.pack(side=LEFT, padx=5, pady=7)
 
 
 # initialization of the game
