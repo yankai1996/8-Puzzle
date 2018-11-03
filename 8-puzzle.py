@@ -271,9 +271,9 @@ def solve():
     print('Solving...')
     
     # get solving time
-    stime = time.clock()
+    stime = time.time()
     path, n = run[index]()
-    ttime = time.clock()
+    ttime = time.time()
 
     # if 8-puzzle is unsolvable
     if not path:    
