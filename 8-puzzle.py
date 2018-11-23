@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# python3 eight-puzzle.py 
+# python3 8-puzzle.py 
 #
 # Final Version
 #
